@@ -32,4 +32,8 @@ def won?(board)
     end
   end
 
+  if board.all? do |position|
+    position_taken(board, position)
+  end
+
 end
