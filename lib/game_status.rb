@@ -16,11 +16,9 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-
   if board.all?(" ")
     return false
   end
-
   WIN_COMBINATIONS.each do |win_combo|
     win_idx1 = win_combo[0]
     win_idx2 = win_combo[1]
@@ -31,10 +29,13 @@ def won?(board)
       return win_combo
     end
   end
-
-
-
-
-
   return false
+end
+
+def full?(board)
+  board_checker = board.reject? {|space| space != " "}
+  if board_checker.size != 0
+    return false
+  end
+  return true
 end
