@@ -21,7 +21,7 @@ def won?(board)
     return false
   end
 
-  WIN_COMBINATIONS.each do |win_combo|
+  WIN_COMBINATIONS.select do |win_combo|
     if win_combo[0] == "X" && win_combo[1] == "X" && win_combo[2] == "X"
       return win_combo
     elsif win_combo[0] == "O" && win_combo[1] == "O" && win_combo[2] == "O"
