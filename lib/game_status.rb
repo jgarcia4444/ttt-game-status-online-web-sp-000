@@ -15,6 +15,10 @@ WIN_COMBINATIONS = [
   [2,4,6]
 ]
 
-def won?
+def won?(board)
+
+  board.none? do |space|
+    space == "X" || space == "O"
+  end
 
 end
