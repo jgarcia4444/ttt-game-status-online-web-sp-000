@@ -33,9 +33,12 @@ def won?(board)
 end
 
 def full?(board)
-  board_checker = board.reject? {|space| space != " "}
-  if board_checker.size != 0
-    return false
+  board_checker = board.select do |space|
+    space == " "
   end
-  return true
+  if board_checker.size > 0
+    return false
+  else
+    return true
+  end
 end
