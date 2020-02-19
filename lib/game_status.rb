@@ -21,11 +21,13 @@ def won?(board)
     return false
   end
 
-  WIN_COMBINATIONS.select do |win_combo|
+  WIN_COMBINATIONS.each do |win_combo|
     win_idx1 = win_combo[0]
     win_idx2 = win_combo[1]
     win_idx3 = win_combo[2]
-    board[win_idx1] == "X" && board[win_idx2] == "X" && board[win_idx3] == "X"
+    if board[win_idx1] == "X" && board[win_idx2] == "X" && board[win_idx3] == "X"
+      return win_combo
+    end
   end
 
 end
