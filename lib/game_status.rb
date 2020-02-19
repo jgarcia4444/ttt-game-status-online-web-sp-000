@@ -31,9 +31,5 @@ def won?(board)
       return win_combo
     end
   end
-
-  if board.all? do |position|
-    position_taken(board, position)
-  end
-
+  return false
 end
