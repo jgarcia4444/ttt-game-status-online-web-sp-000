@@ -17,8 +17,8 @@ WIN_COMBINATIONS = [
 
 def won?(board)
 
-  board.none? do |space|
-    space == "X" || space == "O"
+  if board.all?(" ")
+    return false
   end
 
 end
